@@ -29,7 +29,7 @@ export const menuReducer = (state = initialMenu, action) => {
     case MENU_DELETE:
       return state.filter(item => item.id !== action.payload);
     case MENU_ADD:
-      return [...state, action.payload]
+      return state.map(item=> item.id === action.payload.id ?  {...item, totalSum:action.payload.totalPrice} : item)
     default:
       break;
   }

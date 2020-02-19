@@ -11,7 +11,7 @@ export const deleteMenu = payload => {
 }
 
 export const addMenu = payload => {
-  console.log("addMenu",payload);
+  // console.log("addMenu",payload);
   return{
     type: MENU_ADD,
     payload

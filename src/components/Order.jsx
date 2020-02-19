@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 
 class Order extends Component {
   constructor(props) {
@@ -8,14 +10,19 @@ class Order extends Component {
   }
 
   render() {
+    let { totalSum } = this.props
     return (
       <>
-        <div className="col-md-6">
-            <p>Total Sum: 0</p>
-        </div>
+      
+          <p style={{marginBottom: "0px", marginLeft: "110px"}}>Total Sum: {totalSum}</p>
+     
       </>
     );
   }
 }
 
-export default Order;
+const mapStateToProps = state => ({
+  menuList: state.menuList
+});
+
+export default connect(mapStateToProps)(Order);
